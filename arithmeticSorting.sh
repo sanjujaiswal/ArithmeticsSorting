@@ -8,17 +8,15 @@ read -p "Enter the value of c :" Number3
 
 declare -a ResultantArray
 
-Result=$(($Number1+$Number2*$Number3))
-ResultantArray[exp1]=$Result;
+ResultantArray[exp1]=$(( $Number1 + $Number2 * $Number3));
+ResultantArray[exp2]=$(($Number1*$Number2+$Number3));
+ResultantArray[exp3]=$(($Number3+$Number1/$Number2));
+ResultantArray[exp4]=$(($Number1%$Number2+$Number3));
 
-Result2=$(($Number1*$Number2+$Number3))
-ResultantArray[exp2]=$Result2;
+for (( i=1;i<=4;i++ ))
+do
 
-Result3=$(($Number3+$Number1/$Number2))
-ResultantArray[exp3]=$Result3;
+	eval array[$i]=${ResultantArray[exp$i]};
 
-Result4=$(($Number1%$Number2+$Number3))
-ResultantArray[exp4]=$Result4;
+done
 
-echo "${!ResultantArray[@]}"
-echo "${ResultantArray[@]}"
