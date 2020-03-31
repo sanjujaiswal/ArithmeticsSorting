@@ -14,3 +14,6 @@ echo "Result of a*b+c is :$Result2"
 
 Result3=$(($Number3+$Number1/$Number2))
 echo "Result of c+a/b is :$Result3"
+
+Result4=$(($Number1%$Number2+$Number3))
+echo "Result of a%b+c is :$Result4"
